@@ -67,6 +67,7 @@ $(function () {
     var pointsSlider = document.getElementById("points-slider");
     if (pointsSlider) {
         pointsSlider.innerHTML = tmpl.render("pointsSliderTmpl", pointsModel);
+        var pointsScroll = new IScroll('#points-slider', {});
     }
 
     /* point carousel */
@@ -109,14 +110,14 @@ $(document).ready(function () {
         html: '<h3>Munich, Germany</h3>'
     }],
     directions = new Maplace({
-      locations: LocsD,
-      map_div: '#gmap-route',
-      generate_controls: false,
-      show_markers: false,
-      type: 'directions',
-      draggable: true,
-      afterRoute: function(distance) {
-        $('#km').text(': ' + (distance / 1000) + 'km');
-      }
+        locations: LocsD,
+        map_div: '#gmap-route',
+        generate_controls: false,
+        show_markers: false,
+        type: 'directions',
+        draggable: true,
+        afterRoute: function (distance) {
+            $('#km').text(': ' + (distance / 1000) + 'km');
+        }
     }).Load();
 })
