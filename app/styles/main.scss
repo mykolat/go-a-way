@@ -35,9 +35,6 @@ body {
 .main {
     float: left;
     max-width: 1030px;
-    background: #fff;
-    border: 1px solid #e0e0e0;
-    padding: 20px 51px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -76,25 +73,55 @@ body {
     .container {
         max-width: 730px;
     }
-
-    /* Remove the padding we set earlier */
-    .header,
-    .marketing,
-    .footer {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    /* Space out the masthead */
-    .header {
-        margin-bottom: 30px;
-    }
-
-    /* Remove the bottom border on the jumbotron for visual effect */
-    .jumbotron {
-        border-bottom: 0;
-    }
 }
+
+/* footer */
+.footer {
+    padding-left: 40px;
+    padding-bottom: 1.7rem;
+    background: #77c57a;
+    border-top: 1px solid #4caf50;
+    border-bottom: 17px solid #4caf50;
+    color: #fff;
+    border-radius: 0;
+}
+
+.footer.navbar-light .navbar-nav .nav-link.home {
+    display: inline-block;
+    width: 20px;
+    height: 23px;
+    position: relative;
+    background: url(../img/icon-home.png) no-repeat bottom left;
+}
+
+.footer.navbar-light .navbar-nav .nav-link.home:hover {
+    text-decoration: none;
+}
+
+.footer.navbar-light .navbar-nav .nav-link {
+    color: #fff;
+    font-size: 14px;
+    font-family: 'AvenirNextCyr-Light', sans-serif;
+}
+
+.footer.navbar-light .navbar-nav .nav-link:hover {
+    text-decoration: underline;
+}
+
+.footer.navbar-nav .nav-item + .nav-item {
+    margin-left: 1.4rem;
+}
+
+.footer.navbar-light .navbar-brand {
+    width: 186px;
+    height: 58px;
+    position: absolute;
+    top: 2px;
+    right: 19px;
+    background: url(../img/logo-white.png) no-repeat bottom left;
+}
+
+/* gmap */
 
 .gmap {
     height: 380px;

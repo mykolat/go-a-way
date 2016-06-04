@@ -1,3 +1,7 @@
+#points {
+    padding: 0 0 70px 0;
+}
+
 /* points-slider */
 #points-slider ul {
     width: 65px;
@@ -97,7 +101,7 @@
     padding: 0 20px 0 0;
 }
 
-.social-summary .comments {
+.social-summary .comments-count {
     background-image: url(../img/icon-comments.png);
     background-repeat: no-repeat;
     background-position: right center;
@@ -141,7 +145,6 @@
 .point-carousel .carousel-control.right:hover {
     background-image: url(../img/icon-arrow-right-white.png);
 }
-
 
 .point-carousel .carousel-inner {
     margin: 0 0 10px 0;
@@ -213,7 +216,7 @@
 }
 
 .point-desc {
-    margin: 0 0 20px 0;
+    padding: 0 30px 20px 30px;
     color: #555555;
     font-size: 16px;
     line-height: 1.7em;
@@ -221,6 +224,7 @@
 
 .point-desc h5 {
     margin: 20px 0 15px 0;
+    font-family: 'AvenirNextCyr-Medium', sans-serif;
 }
 
 .point-desc p {
@@ -231,6 +235,110 @@
     display: none;
 }
 
+.point .content {
+    margin: 0 0 50px 0;
+    padding: 20px 51px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    -webkit-box-shadow: 0px 2px 3px 0px rgba(232,232,232,1);
+    -moz-box-shadow: 0px 2px 3px 0px rgba(232,232,232,1);
+    box-shadow: 0px 2px 3px 0px rgba(232,232,232,1);
+}
+
 .point.selected {
     display: block;
+}
+
+.comments {
+    max-width: 744px;
+    margin: 0 auto;
+}
+
+.comments h4 {
+    color: #959595;
+    font-size: 25px;
+    font-family: 'ProximaNova-Semibold', sans-serif;
+    margin: 0 0 20px 35px;
+}
+
+.new-comment {
+    color: #999;
+    font-size: 16px;
+    margin: 0 0 20px 0;
+}
+
+.new-comment textarea {
+    display: block;
+    width: 100%;
+    padding: 22px 0 0 74px;
+    border: 3px solid #4caf50;
+    font-family: 'AvenirNextCyr-Thin', sans-serif;
+    font-size: 16px;
+    background: url(../img/icon-monster.png) no-repeat 17px 17px #fff;
+    outline: none;
+}
+
+.comment {
+    margin: 0 0 17px 0;
+    padding: 20px 20px;
+    background: #fff;
+    -webkit-box-shadow: 0px 2px 3px 0px rgba(232,232,232,1);
+    -moz-box-shadow: 0px 2px 3px 0px rgba(232,232,232,1);
+    box-shadow: 0px 2px 3px 0px rgba(232,232,232,1);
+}
+
+.comment .caption {
+    padding: 0 0 18px 52px;
+    background: url(https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/3Uz6LQj31wbdPri/av-1.png) no-repeat;
+}
+
+.comment .author {
+    font-family: 'AvenirNextCyr-Medium', sans-serif;
+    font-size: 14px;
+    color: #4caf50;
+}
+
+.comment .date {
+    font-size: 13px;
+}
+
+.comment .text {
+    padding: 0 0 30px 8px;
+}
+
+.comment .likesCount {
+    background: url(../img/icon-like.png) no-repeat;
+    margin: 0 0 0 8px;
+    padding: 0 0 0 25px;
+    font-size: 13px;
+    font-family: 'AvenirNextCyr-Light', sans-serif;
+}
+
+.comment .likesCount.thereAreLikes {
+    color: #4caf50;
+}
+
+.comments .view-more-comments {
+    display: block;
+    background: #4caf50;
+    width: 100%;
+    margin: 28px 0 0 0;
+    padding: 16px 0 15px 0;
+    color: #fff;
+    text-align: center;
+    font-family: 'ProximaNova-Semibold', sans-serif;
+    font-size: 25px;
+    position: relative;
+}
+
+.comments .view-more-comments span {
+    position: absolute;
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 3px 7px;
+    border-radius: 4px;
+    right: 30px;
+    top: 21px;
+    font-size: 13px;
+    font-family: 'AvenirNextCyr-Medium', sans-serif;
 }
