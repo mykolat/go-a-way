@@ -10,6 +10,12 @@
 	-webkit-box-shadow:1px 1px 3px #cac4ab;
 	box-shadow:1px 1px 3px #cac4ab;
 }
+.mp-container-fullscreen{
+	border:none;
+	position:fixed;
+	top:0px;
+	left:0px;
+}
 .mp-album-wrapper{
 	width:490px;
 	height:390px;
@@ -26,6 +32,7 @@
 	display:block;
 	float:left;
 	padding:2px;
+	background:#f4f4f4;
 }
 .mp-album a img{
 	display:block;
@@ -36,9 +43,10 @@
 	transition: all 0.2s ease-in-out;
 }
 .mp-album a.current{
-	background:#333;
+	background:#eb3939;
 }
-.mp-album a img:hover{
+.mp-album a img:hover,
+.mp-album a.current img{
 	opacity:0.8;
 }
 .mp-album-overlay{
@@ -65,7 +73,7 @@
 	vertical-align: middle;
 }
 .mp-album-image img{
-	vertical-align: middle; 
+	vertical-align: middle;
 	max-height:100%;
 	max-width:100%;
 	-moz-box-shadow:1px 1px 3px #999;
@@ -108,18 +116,21 @@
 	opacity:0.7;
 }
 .mp-image-overlay-close{
-	top:35px;
+	top:2px;
 	right:10px;
 	width:auto;
 	height:40px;
 	background-color:#000;
-	background-position:5px 50%;
+	background-position:0px 50%;
 	text-indent:0px;
 	color:#fff;
-	line-height:40px;
+	line-height:42px;
 	text-transform:uppercase;
-	font-size:16px;
-	padding:0px 10px 0px 30px;
+	font-size:10px;
+	padding:0px 10px 0px 22px;
+}
+.mp-image-overlay-close:hover{
+	opacity:1.0;
 }
 .mp-album-nav span{
 	position:absolute;
@@ -163,7 +174,7 @@
 }
 .mp-image-overlay-desc{
 	position:absolute;
-	bottom:0px;
+	top:0px;
 	left:0px;
 	width:100%;
 	height:45px;
@@ -209,8 +220,32 @@ h2.mp-label{
 .mp-options a:hover{
 	opacity:0.8;
 }
-.mp-options a.mp-option-fullscreen{
+.mp-options a.mp-option-fullscreen,
+.mp-options a.mp-option-normal{
 	background: #fff url(../images/expand.png) no-repeat center center;
 	right:5px;
 	left:auto;
+}
+.mp-options a.mp-option-normal{
+	background-image:url(../images/collapse.png);
+}
+.mp-loading{
+	background:transparent url(../images/ajax-loader.gif) no-repeat center center;
+	width:48px;
+	height:48px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin:-24px 0 0 -24px;
+	text-indent:-9000px;
+}
+.mp-image-loading-small{
+	background:transparent url(../images/ajax-loader-small.gif) no-repeat center center;
+	width:16px;
+	height:16px;
+	position:absolute;
+	top:10px;
+	left:10px;
+	text-indent:-9000px;
+	display:none;
 }

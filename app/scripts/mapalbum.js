@@ -10,7 +10,7 @@
  */
 $(function() {
 
-  Map = function() {
+  var Map = function() {
     // google.maps.Map
     this.map = null;
     // the DOM element
@@ -71,8 +71,8 @@ $(function() {
 
       var instance = this;
 
-      zoomChangeListener = google.maps.event.addListener(this.map, 'zoom_changed', function() {
-        zoomChangeBoundsListener = google.maps.event.addListener(instance.map, 'bounds_changed', function(event) {
+      var zoomChangeListener = google.maps.event.addListener(this.map, 'zoom_changed', function() {
+        var zoomChangeBoundsListener = google.maps.event.addListener(instance.map, 'bounds_changed', function(event) {
           if (this.getZoom() > 15) // don't allow a zoom factor > 15
             this.setZoom(15);
 
@@ -175,7 +175,7 @@ $(function() {
     }
   };
 
-  Marker = function(data) {
+  var Marker = function(data) {
     this._create(data);
   };
 
@@ -226,7 +226,7 @@ $(function() {
     }
   };
 
-  Photo = function(data) {
+  var Photo = function(data) {
     this._create(data);
   };
 
@@ -330,7 +330,7 @@ $(function() {
     }
   };
 
-  Place = function(data) {
+  var Place = function(data) {
     this._create(data);
   };
 
@@ -445,7 +445,7 @@ $(function() {
     }
   };
 
-  MapPhotoAlbum = function() {
+  var MapPhotoAlbum = function() {
     // array of places
     this.places = new Array();
   };
@@ -575,293 +575,6 @@ $(function() {
             "description": "Some image description",
             "lat": 13.6780132567,
             "lng": 100.591850281
-          }, {
-            "index": 3,
-            "thumb": "photos\/Bangkok\/thumbs\/4.jpg",
-            "source": "photos\/Bangkok\/4.jpg",
-            "description": "Some image description",
-            "lat": 13.6653366438,
-            "lng": 100.611248016
-          }, {
-            "index": 4,
-            "thumb": "photos\/Bangkok\/thumbs\/5.jpg",
-            "source": "photos\/Bangkok\/5.jpg",
-            "description": "Some image description",
-            "lat": 13.871413,
-            "lng": 100.382767
-          }, {
-            "index": 5,
-            "thumb": "photos\/Bangkok\/thumbs\/6.jpg",
-            "source": "photos\/Bangkok\/6.jpg",
-            "description": "Some image description",
-            "lat": 13.766063,
-            "lng": 100.351181
-          }, {
-            "index": 6,
-            "thumb": "photos\/Bangkok\/thumbs\/7.jpg",
-            "source": "photos\/Bangkok\/7.jpg",
-            "description": "Some image description",
-            "lat": 13.753058,
-            "lng": 100.472202
-          }, {
-            "index": 7,
-            "thumb": "photos\/Bangkok\/thumbs\/8.jpg",
-            "source": "photos\/Bangkok\/8.jpg",
-            "description": "Some image description",
-            "lat": 13.724711,
-            "lng": 100.446625
-          }, {
-            "index": 8,
-            "thumb": "photos\/Bangkok\/thumbs\/9.jpg",
-            "source": "photos\/Bangkok\/9.jpg",
-            "description": "Some image description",
-            "lat": 13.698028,
-            "lng": 100.50705
-          }, {
-            "index": 9,
-            "thumb": "photos\/Bangkok\/thumbs\/10.jpg",
-            "source": "photos\/Bangkok\/10.jpg",
-            "description": "Some image description",
-            "lat": 13.672676,
-            "lng": 100.366287
-          }, {
-            "index": 10,
-            "thumb": "photos\/Bangkok\/thumbs\/11.jpg",
-            "source": "photos\/Bangkok\/11.jpg",
-            "description": "Some image description",
-            "lat": 13.647989,
-            "lng": 100.437012
-          }, {
-            "index": 11,
-            "thumb": "photos\/Bangkok\/thumbs\/12.jpg",
-            "source": "photos\/Bangkok\/12.jpg",
-            "description": "Some image description",
-            "lat": 13.609285,
-            "lng": 100.450745
-          }, {
-            "index": 12,
-            "thumb": "photos\/Bangkok\/thumbs\/13.jpg",
-            "source": "photos\/Bangkok\/13.jpg",
-            "description": "Some image description",
-            "lat": 13.5926,
-            "lng": 100.491257
-          }, {
-            "index": 13,
-            "thumb": "photos\/Bangkok\/thumbs\/14.jpg",
-            "source": "photos\/Bangkok\/14.jpg",
-            "description": "Some image description",
-            "lat": 13.559894,
-            "lng": 100.553741
-          }, {
-            "index": 14,
-            "thumb": "photos\/Bangkok\/thumbs\/15.jpg",
-            "source": "photos\/Bangkok\/15.jpg",
-            "description": "Some image description",
-            "lat": 13.584591,
-            "lng": 100.627899
-          }, {
-            "index": 15,
-            "thumb": "photos\/Bangkok\/thumbs\/16.jpg",
-            "source": "photos\/Bangkok\/16.jpg",
-            "description": "Some image description",
-            "lat": 13.603946,
-            "lng": 100.537262
-          }, {
-            "index": 16,
-            "thumb": "photos\/Bangkok\/thumbs\/17.jpg",
-            "source": "photos\/Bangkok\/17.jpg",
-            "description": "Some image description",
-            "lat": 13.619962,
-            "lng": 100.508423
-          }, {
-            "index": 17,
-            "thumb": "photos\/Bangkok\/thumbs\/18.jpg",
-            "source": "photos\/Bangkok\/18.jpg",
-            "description": "Some image description",
-            "lat": 13.656663,
-            "lng": 100.485764
-          }, {
-            "index": 18,
-            "thumb": "photos\/Bangkok\/thumbs\/19.jpg",
-            "source": "photos\/Bangkok\/19.jpg",
-            "description": "Some image description",
-            "lat": 13.666004,
-            "lng": 100.516663
-          }, {
-            "index": 19,
-            "thumb": "photos\/Bangkok\/thumbs\/20.jpg",
-            "source": "photos\/Bangkok\/20.jpg",
-            "description": "Some image description",
-            "lat": 13.680682,
-            "lng": 100.538635
-          }, {
-            "index": 20,
-            "thumb": "photos\/Bangkok\/thumbs\/21.jpg",
-            "source": "photos\/Bangkok\/21.jpg",
-            "description": "Some image description",
-            "lat": 13.696693,
-            "lng": 100.473404
-          }, {
-            "index": 21,
-            "thumb": "photos\/Bangkok\/thumbs\/22.jpg",
-            "source": "photos\/Bangkok\/22.jpg",
-            "description": "Some image description",
-            "lat": 13.695359,
-            "lng": 100.50293
-          }, {
-            "index": 22,
-            "thumb": "photos\/Bangkok\/thumbs\/23.jpg",
-            "source": "photos\/Bangkok\/23.jpg",
-            "description": "Some image description",
-            "lat": 13.699362,
-            "lng": 100.525589
-          }, {
-            "index": 23,
-            "thumb": "photos\/Bangkok\/thumbs\/24.jpg",
-            "source": "photos\/Bangkok\/24.jpg",
-            "description": "Some image description",
-            "lat": 13.620629,
-            "lng": 100.602493
-          }, {
-            "index": 24,
-            "thumb": "photos\/Bangkok\/thumbs\/25.jpg",
-            "source": "photos\/Bangkok\/25.jpg",
-            "description": "Some image description",
-            "lat": 13.616625,
-            "lng": 100.653305
-          }, {
-            "index": 25,
-            "thumb": "photos\/Bangkok\/thumbs\/26.jpg",
-            "source": "photos\/Bangkok\/26.jpg",
-            "description": "Some image description",
-            "lat": 13.877413,
-            "lng": 100.60318
-          }, {
-            "index": 26,
-            "thumb": "photos\/Bangkok\/thumbs\/27.jpg",
-            "source": "photos\/Bangkok\/27.jpg",
-            "description": "Some image description",
-            "lat": 13.856081,
-            "lng": 100.643692
-          }, {
-            "index": 27,
-            "thumb": "photos\/Bangkok\/thumbs\/28.jpg",
-            "source": "photos\/Bangkok\/28.jpg",
-            "description": "Some image description",
-            "lat": 13.817411,
-            "lng": 100.680084
-          }, {
-            "index": 28,
-            "thumb": "photos\/Bangkok\/thumbs\/29.jpg",
-            "source": "photos\/Bangkok\/29.jpg",
-            "description": "Some image description",
-            "lat": 13.816077,
-            "lng": 100.730896
-          }, {
-            "index": 29,
-            "thumb": "photos\/Bangkok\/thumbs\/30.jpg",
-            "source": "photos\/Bangkok\/30.jpg",
-            "description": "Some image description",
-            "lat": 13.76673,
-            "lng": 100.692444
-          }, {
-            "index": 30,
-            "thumb": "photos\/Bangkok\/thumbs\/31.jpg",
-            "source": "photos\/Bangkok\/31.jpg",
-            "description": "Some image description",
-            "lat": 13.789405,
-            "lng": 100.618286
-          }, {
-            "index": 31,
-            "thumb": "photos\/Bangkok\/thumbs\/32.jpg",
-            "source": "photos\/Bangkok\/32.jpg",
-            "description": "Some image description",
-            "lat": 13.791405,
-            "lng": 100.587387
-          }, {
-            "index": 32,
-            "thumb": "photos\/Bangkok\/thumbs\/33.jpg",
-            "source": "photos\/Bangkok\/33.jpg",
-            "description": "Some image description",
-            "lat": 13.778068,
-            "lng": 100.537262
-          }, {
-            "index": 33,
-            "thumb": "photos\/Bangkok\/thumbs\/34.jpg",
-            "source": "photos\/Bangkok\/34.jpg",
-            "description": "Some image description",
-            "lat": 13.7754,
-            "lng": 100.565414
-          }, {
-            "index": 34,
-            "thumb": "photos\/Bangkok\/thumbs\/35.jpg",
-            "source": "photos\/Bangkok\/35.jpg",
-            "description": "Some image description",
-            "lat": 13.751391,
-            "lng": 100.584641
-          }, {
-            "index": 35,
-            "thumb": "photos\/Bangkok\/thumbs\/36.jpg",
-            "source": "photos\/Bangkok\/36.jpg",
-            "description": "Some image description",
-            "lat": 13.723377,
-            "lng": 100.485764
-          }, {
-            "index": 36,
-            "thumb": "photos\/Bangkok\/thumbs\/37.jpg",
-            "source": "photos\/Bangkok\/37.jpg",
-            "description": "Some image description",
-            "lat": 13.731381,
-            "lng": 100.520096
-          }, {
-            "index": 37,
-            "thumb": "photos\/Bangkok\/thumbs\/38.jpg",
-            "source": "photos\/Bangkok\/38.jpg",
-            "description": "Some image description",
-            "lat": 13.730714,
-            "lng": 100.548248
-          }, {
-            "index": 38,
-            "thumb": "photos\/Bangkok\/thumbs\/39.jpg",
-            "source": "photos\/Bangkok\/39.jpg",
-            "description": "Some image description",
-            "lat": 13.716706,
-            "lng": 100.561295
-          }, {
-            "index": 39,
-            "thumb": "photos\/Bangkok\/thumbs\/40.jpg",
-            "source": "photos\/Bangkok\/40.jpg",
-            "description": "Some image description",
-            "lat": 13.71804,
-            "lng": 100.585327
-          }, {
-            "index": 40,
-            "thumb": "photos\/Bangkok\/thumbs\/41.jpg",
-            "source": "photos\/Bangkok\/41.jpg",
-            "description": "Some image description",
-            "lat": 13.716706,
-            "lng": 100.652618
-          }, {
-            "index": 41,
-            "thumb": "photos\/Bangkok\/thumbs\/42.jpg",
-            "source": "photos\/Bangkok\/42.jpg",
-            "description": "Some image description",
-            "lat": 13.694025,
-            "lng": 100.689011
-          }, {
-            "index": 42,
-            "thumb": "photos\/Bangkok\/thumbs\/43.jpg",
-            "source": "photos\/Bangkok\/43.jpg",
-            "description": "Some image description",
-            "lat": 13.655996,
-            "lng": 100.670471
-          }, {
-            "index": 43,
-            "thumb": "photos\/Bangkok\/thumbs\/44.jpg",
-            "source": "photos\/Bangkok\/44.jpg",
-            "description": "Some image description",
-            "lat": 13.64265,
-            "lng": 100.581894
           }]
         }, {
           "name": "Phuket",
@@ -888,202 +601,6 @@ $(function() {
             "description": "Some image description",
             "lat": 8.043592,
             "lng": 98.276138
-          }, {
-            "index": 3,
-            "thumb": "photos\/Phuket\/thumbs\/4.jpg",
-            "source": "photos\/Phuket\/4.jpg",
-            "description": "Some image description",
-            "lat": 8.029994,
-            "lng": 98.290558
-          }, {
-            "index": 4,
-            "thumb": "photos\/Phuket\/thumbs\/5.jpg",
-            "source": "photos\/Phuket\/5.jpg",
-            "description": "Some image description",
-            "lat": 8.05651,
-            "lng": 98.42514
-          }, {
-            "index": 5,
-            "thumb": "photos\/Phuket\/thumbs\/6.jpg",
-            "source": "photos\/Phuket\/6.jpg",
-            "description": "Some image description",
-            "lat": 8.039513,
-            "lng": 98.410721
-          }, {
-            "index": 6,
-            "thumb": "photos\/Phuket\/thumbs\/7.jpg",
-            "source": "photos\/Phuket\/7.jpg",
-            "description": "Some image description",
-            "lat": 8.019796,
-            "lng": 98.359909
-          }, {
-            "index": 7,
-            "thumb": "photos\/Phuket\/thumbs\/8.jpg",
-            "source": "photos\/Phuket\/8.jpg",
-            "description": "Some image description",
-            "lat": 7.991238,
-            "lng": 98.331757
-          }, {
-            "index": 8,
-            "thumb": "photos\/Phuket\/thumbs\/9.jpg",
-            "source": "photos\/Phuket\/9.jpg",
-            "description": "Some image description",
-            "lat": 7.993957,
-            "lng": 98.394241
-          }, {
-            "index": 9,
-            "thumb": "photos\/Phuket\/thumbs\/10.jpg",
-            "source": "photos\/Phuket\/10.jpg",
-            "description": "Some image description",
-            "lat": 7.957577,
-            "lng": 98.447113
-          }, {
-            "index": 10,
-            "thumb": "photos\/Phuket\/thumbs\/11.jpg",
-            "source": "photos\/Phuket\/11.jpg",
-            "description": "Some image description",
-            "lat": 7.947037,
-            "lng": 98.335876
-          }, {
-            "index": 11,
-            "thumb": "photos\/Phuket\/thumbs\/12.jpg",
-            "source": "photos\/Phuket\/12.jpg",
-            "description": "Some image description",
-            "lat": 7.932075,
-            "lng": 98.265152
-          }, {
-            "index": 12,
-            "thumb": "photos\/Phuket\/thumbs\/13.jpg",
-            "source": "photos\/Phuket\/13.jpg",
-            "description": "Some image description",
-            "lat": 7.938876,
-            "lng": 98.313904
-          }, {
-            "index": 13,
-            "thumb": "photos\/Phuket\/thumbs\/14.jpg",
-            "source": "photos\/Phuket\/14.jpg",
-            "description": "Some image description",
-            "lat": 7.924594,
-            "lng": 98.312531
-          }, {
-            "index": 14,
-            "thumb": "photos\/Phuket\/thumbs\/15.jpg",
-            "source": "photos\/Phuket\/15.jpg",
-            "description": "Some image description",
-            "lat": 7.930715,
-            "lng": 98.336563
-          }, {
-            "index": 15,
-            "thumb": "photos\/Phuket\/thumbs\/16.jpg",
-            "source": "photos\/Phuket\/16.jpg",
-            "description": "Some image description",
-            "lat": 7.926635,
-            "lng": 98.359909
-          }, {
-            "index": 16,
-            "thumb": "photos\/Phuket\/thumbs\/17.jpg",
-            "source": "photos\/Phuket\/17.jpg",
-            "description": "Some image description",
-            "lat": 7.940066,
-            "lng": 98.422909
-          }, {
-            "index": 17,
-            "thumb": "photos\/Phuket\/thumbs\/18.jpg",
-            "source": "photos\/Phuket\/18.jpg",
-            "description": "Some image description",
-            "lat": 7.908442,
-            "lng": 98.549938
-          }, {
-            "index": 18,
-            "thumb": "photos\/Phuket\/thumbs\/19.jpg",
-            "source": "photos\/Phuket\/19.jpg",
-            "description": "Some image description",
-            "lat": 7.891439,
-            "lng": 98.514919
-          }, {
-            "index": 19,
-            "thumb": "photos\/Phuket\/thumbs\/20.jpg",
-            "source": "photos\/Phuket\/20.jpg",
-            "description": "Some image description",
-            "lat": 7.880896,
-            "lng": 98.412781
-          }, {
-            "index": 20,
-            "thumb": "photos\/Phuket\/thumbs\/21.jpg",
-            "source": "photos\/Phuket\/21.jpg",
-            "description": "Some image description",
-            "lat": 7.881747,
-            "lng": 98.397675
-          }, {
-            "index": 21,
-            "thumb": "photos\/Phuket\/thumbs\/22.jpg",
-            "source": "photos\/Phuket\/22.jpg",
-            "description": "Some image description",
-            "lat": 7.872224,
-            "lng": 98.391495
-          }, {
-            "index": 22,
-            "thumb": "photos\/Phuket\/thumbs\/23.jpg",
-            "source": "photos\/Phuket\/23.jpg",
-            "description": "Some image description",
-            "lat": 7.885827,
-            "lng": 98.344116
-          }, {
-            "index": 23,
-            "thumb": "photos\/Phuket\/thumbs\/24.jpg",
-            "source": "photos\/Phuket\/24.jpg",
-            "description": "Some image description",
-            "lat": 7.885147,
-            "lng": 98.300858
-          }, {
-            "index": 24,
-            "thumb": "photos\/Phuket\/thumbs\/25.jpg",
-            "source": "photos\/Phuket\/25.jpg",
-            "description": "Some image description",
-            "lat": 7.866783,
-            "lng": 98.324203
-          }, {
-            "index": 25,
-            "thumb": "photos\/Phuket\/thumbs\/26.jpg",
-            "source": "photos\/Phuket\/26.jpg",
-            "description": "Some image description",
-            "lat": 7.840255,
-            "lng": 98.296051
-          }, {
-            "index": 26,
-            "thumb": "photos\/Phuket\/thumbs\/27.jpg",
-            "source": "photos\/Phuket\/27.jpg",
-            "description": "Some image description",
-            "lat": 7.82733,
-            "lng": 98.33931
-          }, {
-            "index": 27,
-            "thumb": "photos\/Phuket\/thumbs\/28.jpg",
-            "source": "photos\/Phuket\/28.jpg",
-            "description": "Some image description",
-            "lat": 7.817807,
-            "lng": 98.385315
-          }, {
-            "index": 28,
-            "thumb": "photos\/Phuket\/thumbs\/29.jpg",
-            "source": "photos\/Phuket\/29.jpg",
-            "description": "Some image description",
-            "lat": 7.787874,
-            "lng": 98.374329
-          }, {
-            "index": 29,
-            "thumb": "photos\/Phuket\/thumbs\/30.jpg",
-            "source": "photos\/Phuket\/30.jpg",
-            "description": "Some image description",
-            "lat": 7.789235,
-            "lng": 98.361969
-          }, {
-            "index": 30,
-            "thumb": "photos\/Phuket\/thumbs\/31.jpg",
-            "source": "photos\/Phuket\/31.jpg",
-            "description": "Some image description",
-            "lat": 7.774948,
-            "lng": 98.31459
           }]
         }, {
           "name": "Myeik",
@@ -1110,83 +627,6 @@ $(function() {
             "description": "Some image description",
             "lat": 12.417801,
             "lng": 98.609505
-          }, {
-            "index": 3,
-            "thumb": "photos\/Myeik\/thumbs\/4.jpg",
-            "source": "photos\/Myeik\/4.jpg",
-            "description": "Some image description",
-            "lat": 12.427021,
-            "lng": 98.605556
-          }, {
-            "index": 4,
-            "thumb": "photos\/Myeik\/thumbs\/5.jpg",
-            "source": "photos\/Myeik\/5.jpg",
-            "description": "Some image description",
-            "lat": 12.426854,
-            "lng": 98.611736
-          }, {
-            "index": 5,
-            "thumb": "photos\/Myeik\/thumbs\/6.jpg",
-            "source": "photos\/Myeik\/6.jpg",
-            "description": "Some image description",
-            "lat": 12.431883,
-            "lng": 98.60281
-          }, {
-            "index": 6,
-            "thumb": "photos\/Myeik\/thumbs\/7.jpg",
-            "source": "photos\/Myeik\/7.jpg",
-            "description": "Some image description",
-            "lat": 12.430206,
-            "lng": 98.648472
-          }, {
-            "index": 7,
-            "thumb": "photos\/Myeik\/thumbs\/8.jpg",
-            "source": "photos\/Myeik\/8.jpg",
-            "description": "Some image description",
-            "lat": 12.452166,
-            "lng": 98.623238
-          }, {
-            "index": 8,
-            "thumb": "photos\/Myeik\/thumbs\/9.jpg",
-            "source": "photos\/Myeik\/9.jpg",
-            "description": "Some image description",
-            "lat": 12.466246,
-            "lng": 98.605556
-          }, {
-            "index": 9,
-            "thumb": "photos\/Myeik\/thumbs\/10.jpg",
-            "source": "photos\/Myeik\/10.jpg",
-            "description": "Some image description",
-            "lat": 12.466916,
-            "lng": 98.61517
-          }, {
-            "index": 10,
-            "thumb": "photos\/Myeik\/thumbs\/11.jpg",
-            "source": "photos\/Myeik\/11.jpg",
-            "description": "Some image description",
-            "lat": 12.470436,
-            "lng": 98.620663
-          }, {
-            "index": 11,
-            "thumb": "photos\/Myeik\/thumbs\/12.jpg",
-            "source": "photos\/Myeik\/12.jpg",
-            "description": "Some image description",
-            "lat": 12.469431,
-            "lng": 98.635597
-          }, {
-            "index": 12,
-            "thumb": "photos\/Myeik\/thumbs\/13.jpg",
-            "source": "photos\/Myeik\/13.jpg",
-            "description": "Some image description",
-            "lat": 12.463396,
-            "lng": 98.645554
-          }, {
-            "index": 13,
-            "thumb": "photos\/Myeik\/thumbs\/14.jpg",
-            "source": "photos\/Myeik\/14.jpg",
-            "description": "Some image description",
-            "lat": 12.399862,
-            "lng": 98.623924
           }]
         }]
       };
@@ -1232,7 +672,7 @@ $(function() {
     }
   };
 
-  Menu = function() {
+  var Menu = function() {
     // add Title and Control buttons
     this._addTitleControls();
   };
@@ -1267,7 +707,7 @@ $(function() {
     }
   };
 
-  Gallery = function() {
+  var Gallery = function() {
     this.$galleryEl = $('#mp-album-wrapper');
     this._initEvents();
   };

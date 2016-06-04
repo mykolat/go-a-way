@@ -5,9 +5,11 @@ $enable-flex: true;
 // endbower
 
 @import "trip.scss";
+@import "photomap.scss";
 
 /* malihu-custom-scrollbar-plugin */
 @import "/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css";
+@import "jquery.jscrollpane.css";
 
 .browsehappy {
   margin: 0.2em 0;

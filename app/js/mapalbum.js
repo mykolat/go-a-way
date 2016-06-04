@@ -10,7 +10,7 @@
  */
 $(function() {
 
-  Map = function() {
+  var Map = function() {
     // google.maps.Map
     this.map = null;
     // the DOM element
@@ -175,7 +175,7 @@ $(function() {
     }
   };
 
-  Marker = function(data) {
+  var Marker = function(data) {
     this._create(data);
   };
 
@@ -226,7 +226,7 @@ $(function() {
     }
   };
 
-  Photo = function(data) {
+  var Photo = function(data) {
     this._create(data);
   };
 
@@ -330,7 +330,7 @@ $(function() {
     }
   };
 
-  Place = function(data) {
+  var Place = function(data) {
     this._create(data);
   };
 
@@ -672,7 +672,7 @@ $(function() {
     }
   };
 
-  Menu = function() {
+  var Menu = function() {
     // add Title and Control buttons
     this._addTitleControls();
   };
@@ -707,7 +707,7 @@ $(function() {
     }
   };
 
-  Gallery = function() {
+  var Gallery = function() {
     this.$galleryEl = $('#mp-album-wrapper');
     this._initEvents();
   };
