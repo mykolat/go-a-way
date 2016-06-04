@@ -57,7 +57,9 @@ $(function () {
     var pointsModel = {
         points: [
             {},
-            {},
+            {
+                isVisited: true
+            },
             {
                 isSelected: true
             },
