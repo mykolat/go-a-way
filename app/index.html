@@ -23,41 +23,19 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="container">
-        <div class="header">
-            <ul class="nav nav-pills pull-right">
-                <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-            </ul>
-            <h3 class="text-muted">hack</h3>
+    <div class="container-fluid">
+        <div class="row">
+            <h1>Go-a-way</h1>
         </div>
-
-        <div class="jumbotron">
-            <h1>'Allo, 'Allo!</h1>
-            <p class="lead">Always a pleasure scaffolding your apps.</p>
-            <p><a class="btn btn-lg btn-success" href="#">Splendid!</a></p>
-        </div>
-
-        <div class="card-columns">
-
-            <div class="card">
-                <div class="card-block">
-                    <h4 class="card-title"><a href="http://v4-alpha.getbootstrap.com/">Bootstrap 4</a></h4>
-                    <p class="card-text">Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-block">
-                    <h4 class="card-title"><a href="http://libsass.org/">Sass</a></h4>
-                    <p class="card-text">Sass is a mature, stable, and powerful professional grade CSS extension language.</p>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="footer">
-            <p> from us</p>
+        <div class="row">
+            <script type="text/html" id="tripsTmpl">
+                <ul>
+                    <% for ( var i = 0; i < trips.length; i++ ) { %>
+                    <li><a href="<%=trips[i].url%>"><%=trips[i].name%></a></li>
+                    <% } %>
+                </ul>
+            </script>
+            <div id="trips"></div>
         </div>
     </div>
 

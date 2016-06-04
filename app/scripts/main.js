@@ -38,6 +38,28 @@ var tmpl = function () {
 
 $(function () {
 
+    /* trips list */
+    var tripsModel = {
+        trips: [
+            {
+                name: "Peru & Chile",
+                url: 'trip.html'
+            },
+            {
+                name: "Lviv"
+            },
+            {
+                name: "Kyiv-Odesa"
+            }
+        ]
+    };
+    var trips = document.getElementById("trips");
+    if (trips) {
+        trips.innerHTML = tmpl.render("tripsTmpl", tripsModel);
+    }
+
+
+    /* points list */
     var pointsModel = {
         points: [
             {
@@ -52,9 +74,10 @@ $(function () {
             }
         ]
     };
-
-    var results = document.getElementById("points-slider");
-    results.innerHTML = tmpl.render("pointsSliderTmpl", pointsModel);
+    var pointsSlider = document.getElementById("points-slider");
+    if (pointsSlider) {
+        pointsSlider.innerHTML = tmpl.render("pointsSliderTmpl", pointsModel);
+    }
 
     /* point-carousel */
     $("#point-carousel").mCustomScrollbar({ axis: "x" });
