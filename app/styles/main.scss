@@ -1,10 +1,15 @@
 $enable-flex: true;
 
-
-
 // bower:scss
 @import "bower_components/bootstrap/scss/bootstrap.scss";
 // endbower
+
+// bower:scss
+@import "trip.scss";
+// endbower
+
+/* malihu-custom-scrollbar-plugin */
+@import "/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css";
 
 .browsehappy {
   margin: 0.2em 0;
@@ -93,7 +98,3 @@ body {
     border-bottom: 0;
   }
 }
-
-// bower:scss
-@import "trip.scss";
-// endbower
