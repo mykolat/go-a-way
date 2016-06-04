@@ -54,6 +54,40 @@
     margin: 20px auto;
 }
 
+#point-carousel .carousel-control {
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    margin-top: -25px;
+    background: #fff;
+    opacity: 1;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#point-carousel .carousel-control.left {
+    left: 5px;
+    background-image: url(../img/icon-arrow-left.png);
+}
+
+#point-carousel .carousel-control.right {
+    right: 5px;
+    background-image: url(../img/icon-arrow-right.png);
+}
+
+#point-carousel .carousel-control:hover {
+    background-color: #4caf50;
+}
+
+#point-carousel .carousel-control.left:hover {
+    background-image: url(../img/icon-arrow-left-white.png);
+}
+
+#point-carousel .carousel-control.right:hover {
+    background-image: url(../img/icon-arrow-right-white.png);
+}
+
+
 #point-carousel .carousel-inner {
     margin: 0 0 10px 0;
 }
@@ -87,13 +121,17 @@
     border-radius: 0;
     display: inline-block;
     height: auto;
-    margin: 0 !important;
+    margin: 0 3px 0 0;
     width: auto;
+    padding: 3px;
+    border: 1px solid #f6f6f6;
 }
 
 #point-carousel .carousel-indicators li img {
     display: block;
     opacity: 0.5;
+    width: 119px;
+    height: 82px;
 }
 
 #point-carousel .carousel-indicators li.selected img {
@@ -102,4 +140,26 @@
 
 #point-carousel .carousel-indicators li:hover img {
     opacity: 0.75;
+}
+
+.spacer {
+    width: 56%;
+    margin: 0 auto 30px auto;
+    height: 1px;
+    background: #e7e7e7;
+}
+
+.point-desc {
+    margin: 0 0 20px 0;
+    color: #555555;
+    font-size: 16px;
+    line-height: 1.7em;
+}
+
+.point-desc h5 {
+    margin: 20px 0 15px 0;
+}
+
+.point-desc p {
+    margin: 0 0 10px 0;
 }
