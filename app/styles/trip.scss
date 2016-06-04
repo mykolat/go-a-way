@@ -54,6 +54,53 @@
     font-weight: bold;
 }
 
+.social-summary {
+    margin: 30px 0 0 0;
+}
+
+.social-summary table {
+    color: #73d316;
+    font-size: 13px;
+    width: 100%;
+}
+
+.social-summary td {
+    width: 33.2%;
+}
+
+.social-summary .center {
+    text-align: center;
+}
+
+.social-summary .right {
+    text-align: right;
+}
+
+.social-summary span {
+    display: inline-block;
+    height: 25px;
+    line-height: 22px;
+}
+
+.social-summary .likes {
+    background-image: url(../img/icon-like.png);
+    background-repeat: no-repeat;
+    padding: 0 0 0 25px;
+}
+
+.social-summary .shares {
+    background-image: url(../img/icon-share.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding: 0 20px 0 0;
+}
+
+.social-summary .comments {
+    background-image: url(../img/icon-comments.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding: 0 25px 0 0;
+}
 
 /* point-carousel */
 .point-carousel {
