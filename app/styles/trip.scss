@@ -1,22 +1,22 @@
 /* points-slider */
 #points-slider ul {
+    width: 65px;
     list-style-type: none;
     padding: 0;
     margin: 0;
-    border-bottom: 1px solid #808080;
 }
 
 #points-slider li {
     display: block;
-    height: 80px;
+    height: 60px;
+    margin: 0 0 6px 0;
     padding: 0;
-    border-top: 1px solid #808080;
-    border-left: 1px solid #808080;
-    border-right: 1px solid #808080;
+   border: 1px solid #e0e0e0;
+    background: #ffffff;
 }
 
 #points-slider li.active {
-    border: 3px solid #808080;
+    background: #4caf50;
 }
 
 #points-slider li a {
