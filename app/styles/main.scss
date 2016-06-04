@@ -96,3 +96,31 @@ body {
     border-bottom: 0;
   }
 }
+
+.gmap {
+    height: 380px;
+    width: 100%;
+    padding: 3px;
+    border: 5px solid #ddd;
+    font-size: 90%;
+}
+
+.gmap+.gmap {
+    margin: 5px 0;
+}
+
+
+.gmap img,.gmap object,.gmap embed {
+    max-width: none;
+    height: auto
+}
+
+.gmap *,.gmap *:before,.gmap *:after {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.gmap * {
+    font-size: 100%;
+}

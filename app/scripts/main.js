@@ -104,7 +104,6 @@ $(document).ready(function() {
       show_markers: false,
       type: 'directions',
       draggable: true,
-      directions_panel: '#route',
       afterRoute: function(distance) {
         $('#km').text(': ' + (distance / 1000) + 'km');
       }
