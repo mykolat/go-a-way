@@ -15,11 +15,6 @@
     background: url(../img/icon-scheduled-pin.png) no-repeat center center #ffffff;
 }
 
-#points-slider li.selected {
-    background-color: #4caf50;
-    background-image: url(../img/icon-active-pin.png);
-}
-
 #points-slider li.home {
     background-image: url(../img/icon-home-pin.png);
 }
@@ -30,6 +25,11 @@
 
 #points-slider li.visited {
     background-image: url(../img/icon-visited-pin.png);
+}
+
+#points-slider li.selected {
+    background-color: #4caf50;
+    background-image: url(../img/icon-active-pin.png);
 }
 
 #points-slider li a {

@@ -61,6 +61,7 @@ $(function () {
                 isVisited: true
             },
             {
+                isVisited: true,
                 isSelected: true
             },
             {
@@ -79,6 +80,8 @@ $(function () {
 
         $('#points-slider li').click(function () {
             var currentPointIndex = $(this).index();
+            $('#points-slider li').removeClass('selected');
+            $(this).addClass('selected');
             $('.point').hide();
             $($('.point').eq(currentPointIndex)).show();
         });
