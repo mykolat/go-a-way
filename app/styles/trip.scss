@@ -39,14 +39,16 @@
 }
 
 .point-name {
-    font-family: 'montserratlight', sans-serif;
+    margin: 0 0 15px 0;
+    font-family: 'ProximaNova-Regular', sans-serif;
     font-size: 35px;
     color: #000;
 }
 
 .point-details {
     color: #999999;
-    font-siz: 12px;
+    font-family: 'AvenirNextCyr-Light', sans-serif;
+    font-size: 14px;
 }
 
 .point-details .username {
@@ -190,9 +192,9 @@
 
 .point-carousel .carousel-indicators li img {
     display: block;
-    opacity: 0.5;
     width: 119px;
     height: 82px;
+    opacity: 1;
 }
 
 .point-carousel .carousel-indicators li.selected img {
