@@ -98,11 +98,12 @@ $(document).ready(function () {
         html: '<h3>Zurich, Switzerland</h3>',
         visible: false
     }, {
-        lat: 48.892,
-        lon: 2.359,
-        title: 'Paris, France',
-        html: '<h3>Paris, France</h3>',
-        stopover: true
+      lat: 48.892,
+      lon: 2.359,
+      title: 'Paris, France',
+      html: '<h3>Paris, France</h3>',
+      stopover: true,
+      photo: '/images/88063945.jpg'
     }, {
         lat: 48.13654,
         lon: 11.57706,
@@ -110,14 +111,14 @@ $(document).ready(function () {
         html: '<h3>Munich, Germany</h3>'
     }],
     directions = new Maplace({
-        locations: LocsD,
-        map_div: '#gmap-route',
-        generate_controls: false,
-        show_markers: false,
-        type: 'directions',
-        draggable: true,
-        afterRoute: function (distance) {
-            $('#km').text(': ' + (distance / 1000) + 'km');
-        }
+      locations: LocsD,
+      map_div: '#gmap-route',
+      generate_controls: false,
+      show_markers: true,
+      type: 'polyline',
+      draggable: false,
+      afterRoute: function(distance) {
+        $('#km').text(': ' + (distance / 1000) + 'km');
+      }
     }).Load();
 })
