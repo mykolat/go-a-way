@@ -132,7 +132,6 @@ $(document).ready(function() {
       lon: 2.2775168,
       title: 'Draggable',
       html: '<h3>Content B1</h3>',
-      strokeColor: '#FF0000'
     }, {
       lat: 53.8852823,
       lon: 27.47706,
