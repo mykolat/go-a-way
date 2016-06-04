@@ -10,13 +10,13 @@
 * @preserve
 */
 
-;(function(root, factory) {
+;(function init(root, factory) {
     if (typeof define === 'function' && define.amd) {
         define(['jquery'], factory);
     } else if (typeof exports === 'object') {
         module.exports = factory(require('jquery'));
     } else {
-        root.Maplace = factory(root.jQuery);
+        window.Maplace = factory(window.jQuery);
     }
 
 }(this, function($) {
@@ -100,6 +100,7 @@
         activateCurrent: function(index) {
             this.html_element.find('li').removeClass('active');
             this.html_element.find('#ullist_a_' + index).parent().addClass('active');
+            this.map_div.trigger("ViewOnMap" ,index);
         },
 
         getHtml: function() {
