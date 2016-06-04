@@ -780,7 +780,6 @@
     Maplace.prototype.get_html_controls = function() {
         if (this.controls[this.o.controls_type] && this.controls[this.o.controls_type].getHtml) {
             this.current_control = this.controls[this.o.controls_type];
-
             return this.current_control.getHtml.apply(this);
         }
         return '';
