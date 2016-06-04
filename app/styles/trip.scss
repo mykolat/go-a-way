@@ -45,13 +45,12 @@
     text-align: left;
     white-space: nowrap;
     width: 100%;
-    height: 58px;
 }
 
 #point-carousel .carousel-indicators ol {
     position: relative;
     margin: 0;
-    height: 58px;
+    min-height: 58px;
     padding: 0;
     width: 100%;
     overflow: auto;
@@ -73,7 +72,7 @@
     opacity: 0.5;
 }
 
-#point-carousel .carousel-indicators li.active img {
+#point-carousel .carousel-indicators li.selected img {
     opacity: 1;
 }
 
