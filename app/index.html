@@ -1,67 +1,83 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="">
-<head>
-    <meta charset="utf-8">
-    <title>hack</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <link rel="stylesheet" href="/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css" />
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
+<head>
+  <meta charset="utf-8">
+  <title>hack</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
 </head>
+
 <body>
-    <!--[if lt IE 10]>
+  <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="container-fluid">
-        <div class="row">
-            <h1>Go-a-way</h1>
-        </div>
-        <div class="row">
-            <script type="text/html" id="tripsTmpl">
-                <ul>
-                    <% for ( var i = 0; i < trips.length; i++ ) { %>
-                    <li><a href="<%=trips[i].url%>"><%=trips[i].name%></a></li>
-                    <% } %>
-                </ul>
-            </script>
-            <div id="trips"></div>
-        </div>
+  <div class="container-fluid">
+    <div class="row">
+      <h1>Go-a-way</h1>
     </div>
+    <div class="row">
+      <script type="text/html" id="tripsTmpl">
+        <ul>
+          <% for ( var i = 0; i < trips.length; i++ ) { %>
+            <li>
+              <a href="<%=trips[i].url%>">
+                <%=trips[i].name%>
+              </a>
+            </li>
+            <% } %>
+        </ul>
+      </script>
+      <div id="trips"></div>
+    </div>
+  </div>
 
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <script src="/bower_components/tether/dist/js/tether.js"></script>
-    <script src="/bower_components/jquery-mousewheel/jquery.mousewheel.js"></script>
-    <script src="/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:js(.) scripts/plugins.js -->
-    <script src="/bower_components/bootstrap/js/dist/alert.js"></script>
-    <script src="/bower_components/bootstrap/js/dist/button.js"></script>
-    <script src="/bower_components/bootstrap/js/dist/carousel.js"></script>
-    <script src="/bower_components/bootstrap/js/dist/collapse.js"></script>
-    <script src="/bower_components/bootstrap/js/dist/dropdown.js"></script>
-    <script src="/bower_components/bootstrap/js/dist/modal.js"></script>
-    <script src="/bower_components/bootstrap/js/dist/scrollspy.js"></script>
-    <script src="/bower_components/bootstrap/js/dist/tab.js"></script>
-    <script src="/bower_components/bootstrap/js/dist/tooltip.js"></script>
-    <script src="/bower_components/bootstrap/js/dist/popover.js"></script>
-    <script src="/bower_components/bootstrap/js/dist/util.js"></script>
-    <!-- endbuild -->
-    <!-- build:js(.tmp) scripts/main.js -->
-    <script src="scripts/main.js"></script>
-    <!-- endbuild -->
+  <h2>Route <strong id="km"></strong></h2>
+  <div id="gmap-route"></div>
+  <div id="route"></div>
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&signed_in=true"></script> -->
+  <script src="https://maps.google.com/maps/api/js?key=AIzaSyDfqrrcc66--qNSBn_nm0HXkBMGgrq2jOI&amp;v=3"></script>
+  <!-- build:js(.) scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="/bower_components/jquery/dist/jquery.js"></script>
+  <script src="/bower_components/tether/dist/js/tether.js"></script>
+  <script src="/bower_components/jquery-mousewheel/jquery.mousewheel.js"></script>
+  <script src="/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js"></script>
+  <script src="/bower_components/maplace-js/dist/maplace.min.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:js(.) scripts/plugins.js -->
+  <script src="/bower_components/bootstrap/js/dist/alert.js"></script>
+  <script src="/bower_components/bootstrap/js/dist/button.js"></script>
+  <script src="/bower_components/bootstrap/js/dist/carousel.js"></script>
+  <script src="/bower_components/bootstrap/js/dist/collapse.js"></script>
+  <script src="/bower_components/bootstrap/js/dist/dropdown.js"></script>
+  <script src="/bower_components/bootstrap/js/dist/modal.js"></script>
+  <script src="/bower_components/bootstrap/js/dist/scrollspy.js"></script>
+  <script src="/bower_components/bootstrap/js/dist/tab.js"></script>
+  <script src="/bower_components/bootstrap/js/dist/tooltip.js"></script>
+  <script src="/bower_components/bootstrap/js/dist/popover.js"></script>
+  <script src="/bower_components/bootstrap/js/dist/util.js"></script>
+  <script src="/bower_components/google-maps/lib/Google.js"></script>
+  <script src="/bower_components/maplace-js/src/maplace.js"></script>
+  <!-- endbuild -->
+  <!-- build:js(.tmp) scripts/main.js -->
+  <script src="scripts/main.js"></script>
+
+  <!-- endbuild -->
 </body>
+
 </html>
