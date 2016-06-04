@@ -35,23 +35,14 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-2">
-                <ol id="points-slider">
-                    <li><a href="#">Cuzco</a></li>
-                    <li class="active"><a href="#">Iquique</a></li>
-                    <li><a href="#">Santiago de Chile</a></li>
-                </ol>
-
-                <script type="text/html" id="item_tmpl">
+                <script type="text/html" id="pointsSliderTmpl">
                     <ul>
-                        <% for ( var i = 0; i < members.length; i++ ) { %>
-                        <li id="<%=members[i].id%>">
-                            <%=i+1%> Member <%=members[i].text%> (from <%=members[i].name%>[ID:<%=members[i].id%>])
-                        </li>
+                        <% for ( var i = 0; i < points.length; i++ ) { %>
+                        <li><a href="#"><%=points[i].name%></a></li>
                         <% } %>
                     </ul>
                 </script>
-                <div id="results"></div>
-
+                <div id="points-slider"></div>
             </div>
             <div class="col-xs-10">
                 <div class="point">

@@ -38,21 +38,23 @@ var tmpl = function () {
 
 $(function () {
 
-    var dataObject = {
-        members: [
-        { id: 1, name: "hoge", text: "aaaaaaaaaaaaaa" },
-        { id: 9, name: "fuga", text: "bbbbbbbbbbbbbb" },
-        { id: 15, name: "hoge", text: "cccccccccccccc" },
-        { id: 22, name: "fuga", text: "dddddddddddddd" },
-        { id: 78, name: "hoge", text: "eeeeeeeeeeeeee" },
-        { id: 876, name: "fuga", text: "ffffffffffffff" },
-        { id: 1033, name: "hoge", text: "gggggggggggggg" },
-        { id: 7899, name: "fuga", text: "hhhhhhhhhhhhhh" }
+    var pointsModel = {
+        points: [
+            {
+                name: "Cuzco"
+            },
+            {
+                name: "Iquique",
+                isActive: true
+            },
+            {
+                name: "Santiago de Chile"
+            }
         ]
     };
 
-    var results = document.getElementById("results");
-    results.innerHTML = tmpl.render("item_tmpl", dataObject);
+    var results = document.getElementById("points-slider");
+    results.innerHTML = tmpl.render("pointsSliderTmpl", pointsModel);
 
     /* point-carousel */
     $("#point-carousel").mCustomScrollbar({ axis: "x" });
