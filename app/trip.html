@@ -15,6 +15,7 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/fonts.css">
     <!-- endbuild -->
 </head>
 <body>
@@ -38,7 +39,7 @@
                 <script type="text/html" id="pointsSliderTmpl">
                     <ul>
                         <% for ( var i = 0; i < points.length; i++ ) { %>
-                        <li class="<%=points[i].isActive ? 'active' : '' %>"><a href="#"><%=points[i].name%></a></li>
+                        <li class="<%=i===0 ? 'home' : '' %> <%=points[i].isSelected ? 'selected' : '' %> <%=points[i].isCurrent ? 'current' : '' %>"><a href="#"></a></li>
                         <% } %>
                     </ul>
                 </script>
@@ -47,8 +48,8 @@
             <div class="main">
                 <div class="point">
 
-                    <h1 id="point-name">Iquique</h1>
-                    <h5 id="point-loc">Iquique, Chile</h5>
+                    <h1 id="point-name">Day 7, Ostrava – the frendliest city in whole Europe.</h1>
+                    <h5 id="point-details"><span class="username">Wendy ‘BB’ Smith</span> visited <span class="point-loc">Ostrava, Czech Rep.</span> <span class="point-date">Aug.17, 2016</span>  |  <span class="point-time">12:22 PM</span></h5>
 
                     <div id="point-carousel" class="carousel slide" data-ride="carousel">
 

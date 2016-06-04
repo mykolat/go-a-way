@@ -55,14 +55,20 @@ $(function () {
 
     /* points list */
     var pointsModel = {
-        points: [{
-            name: "Cuzco"
-        }, {
-            name: "Iquique",
-            isActive: true
-        }, {
-            name: "Santiago de Chile"
-        }]
+        points: [
+            {},
+            {},
+            {
+                isSelected: true
+            },
+            {
+                isCurrent: true
+            },
+        {},
+        {},
+        {},
+        {}
+        ]
     };
     var pointsSlider = document.getElementById("points-slider");
     if (pointsSlider) {
