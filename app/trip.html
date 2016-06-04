@@ -46,82 +46,92 @@
                 <div id="points-slider"></div>
             </div>
             <div class="main">
-                <div class="point">
 
-                    <h1 id="point-name">Day 7, Ostrava – the frendliest city in whole Europe.</h1>
-                    <h5 id="point-details"><span class="username">Wendy ‘BB’ Smith</span> visited <span class="point-loc">Ostrava, Czech Rep.</span> <span class="point-date">Aug.17, 2016</span>  |  <span class="point-time">12:22 PM</span></h5>
+                <script type="text/html" id="pointsTmpl">
+                    <% for ( var j = 0; j < points.length; j++ ) { %>
 
-                    <div id="point-carousel" class="carousel slide" data-ride="carousel">
+                    <div class="point <%=points[j].isSelected ? 'selected' : '' %>">
 
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner" role="listbox">
-                            <div class="carousel-item active">
-                                <img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" />
-                            </div>
-                            <div class="carousel-item">
-                                <img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" />
-                            </div>
-                            <div class="carousel-item">
-                                <img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" />
-                            </div>
-                            <div class="carousel-item">
-                                <img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" />
-                            </div>
-                            <div class="carousel-item">
-                                <img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" />
-                            </div>
-                            <div class="carousel-item">
-                                <img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" />
-                            </div>
-                            <div class="carousel-item">
-                                <img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" />
-                            </div>
-                            <div class="carousel-item">
-                                <img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" />
-                            </div>
-                            <div class="carousel-item">
-                                <img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" />
+                        <h1 class="point-name">Day 7, Ostrava – the frendliest city in whole Europe.</h1>
+                        <h5 class="point-details"><span class="username">Wendy ‘BB’ Smith</span> visited <span class="point-loc">Ostrava, Czech Rep.</span> <span class="point-date">Aug.17, 2016</span>  | <span class="point-time">12:22 PM</span></h5>
+
+                        <div id="point-carousel-<%=j%>" class="point-carousel carousel slide" data-ride="carousel">
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active">
+                                    <img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" />
+                                </div>
+
+                                <!-- Controls -->
+                                <a class="left carousel-control" href="#point-carousel-<%=j%>" role="button" data-slide="prev"></a>
+                                <a class="right carousel-control" href="#point-carousel-<%=j%>" role="button" data-slide="next"></a>
+
                             </div>
 
-                            <!-- Controls -->
-                            <a class="left carousel-control" href="#point-carousel" role="button" data-slide="prev"></a>
-                            <a class="right carousel-control" href="#point-carousel" role="button" data-slide="next"></a>
-
+                            <!-- Indicators -->
+                            <div class="carousel-indicators">
+                                <ol>
+                                    <li data-target="#point-carousel-<%=j%>" data-slide-to="0" class="selected"><a href="#"><img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" /></a></li>
+                                    <li data-target="#point-carousel-<%=j%>" data-slide-to="1"><a href="#"><img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" /></a></li>
+                                    <li data-target="#point-carousel-<%=j%>" data-slide-to="2"><a href="#"><img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" /></a></li>
+                                    <li data-target="#point-carousel-<%=j%>" data-slide-to="3"><a href="#"><img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" /></a></li>
+                                    <li data-target="#point-carousel-<%=j%>" data-slide-to="4"><a href="#"><img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" /></a></li>
+                                    <li data-target="#point-carousel-<%=j%>" data-slide-to="5"><a href="#"><img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" /></a></li>
+                                    <li data-target="#point-carousel-<%=j%>" data-slide-to="6"><a href="#"><img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" /></a></li>
+                                    <li data-target="#point-carousel-<%=j%>" data-slide-to="7"><a href="#"><img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" /></a></li>
+                                    <li data-target="#point-carousel-<%=j%>" data-slide-to="8"><a href="#"><img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" /></a></li>
+                                </ol>
+                            </div>
                         </div>
 
-                        <!-- Indicators -->
-                        <div class="carousel-indicators">
-                            <ol>
-                                <li data-target="#point-carousel" data-slide-to="0" class="selected"><a href="#"><img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" /></a></li>
-                                <li data-target="#point-carousel" data-slide-to="1"><a href="#"><img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" /></a></li>
-                                <li data-target="#point-carousel" data-slide-to="2"><a href="#"><img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" /></a></li>
-                                <li data-target="#point-carousel" data-slide-to="3"><a href="#"><img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" /></a></li>
-                                <li data-target="#point-carousel" data-slide-to="4"><a href="#"><img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" /></a></li>
-                                <li data-target="#point-carousel" data-slide-to="5"><a href="#"><img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" /></a></li>
-                                <li data-target="#point-carousel" data-slide-to="6"><a href="#"><img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" /></a></li>
-                                <li data-target="#point-carousel" data-slide-to="7"><a href="#"><img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" /></a></li>
-                                <li data-target="#point-carousel" data-slide-to="8"><a href="#"><img src="https://s3.amazonaws.com/uploads.hipchat.com/64153/950643/4lT3VtCOMwcX2Pl/Untitled-1.jpg" alt="" /></a></li>
-                            </ol>
+                        <div class="spacer"></div>
+
+                        <div class="point-desc">
+                            <h5>Under the Mythical Landek</h5>
+                            <p>I was really amazed and inspred to learn about Ostravas’ history and name originsOstrava got its name from the river Ostravice, which divides the town into its Moravian and Silesian parts. The root of the word Ostrava, “ostrý”, means “sharply, quickly, swiftly flowing river“. The first evidence of human settlement in the region on which today's city lies goes back to the Stone Age. Approximately 25,000 years ago, mammoth hunters had an encampment at the top of Landek Hill, which has been evidenced by numerous archaeological finds. The most significant discovery was a 48 mm high figurine of a woman’s torso made from hematite found in 1953, called the Petrkovice (or Landek) Venus. Archaeologists have found evidence that prehistoric hunters used coal from exposed seams on the surface as fuel.</p>
+                            <p>It is the first evidence of the use of black coal in the world. In the 8th century, one of the numerous hill forts of the Slavic Holasic tribe was built on the legendary Landek Hill. The stone castle of Czech King Přemysl Otakar II was built here sometime in the middle of the 13th century.</p>
+                            <h5>Under the Mythical Landek</h5>
+                            <p>If you live in New York City or travel to and from New York City a lot, you know all about the traffic there. Getting places is often next to impossible, even with the gazillion yellow cabs. If you’re like me you often look with envy at those shiny limousines with their unformed drivers and wish you could sit in one. Well, you can. New York limo service is more affordable than you think, whether it’s for Newark airport transportation, LaGuardia airport transportation, or to drive wherever you wish to go.</p>
                         </div>
+
+                        <!-- <div id="point-social">
+                            <div>
+                                <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+                            </div>
+                            <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5"></div>
+                        </div> -->
                     </div>
 
-                    <div class="spacer"></div>
+                    <% } %>
+                </script>
 
-                    <div class="point-desc">
-                        <h5>Under the Mythical Landek</h5>
-                        <p>I was really amazed and inspred to learn about Ostravas’ history and name originsOstrava got its name from the river Ostravice, which divides the town into its Moravian and Silesian parts. The root of the word Ostrava, “ostrý”, means “sharply, quickly, swiftly flowing river“. The first evidence of human settlement in the region on which today's city lies goes back to the Stone Age. Approximately 25,000 years ago, mammoth hunters had an encampment at the top of Landek Hill, which has been evidenced by numerous archaeological finds. The most significant discovery was a 48 mm high figurine of a woman’s torso made from hematite found in 1953, called the Petrkovice (or Landek) Venus. Archaeologists have found evidence that prehistoric hunters used coal from exposed seams on the surface as fuel.</p>
-                        <p>It is the first evidence of the use of black coal in the world. In the 8th century, one of the numerous hill forts of the Slavic Holasic tribe was built on the legendary Landek Hill. The stone castle of Czech King Přemysl Otakar II was built here sometime in the middle of the 13th century.</p>
-                        <h5>Under the Mythical Landek</h5>
-                        <p>If you live in New York City or travel to and from New York City a lot, you know all about the traffic there. Getting places is often next to impossible, even with the gazillion yellow cabs. If you’re like me you often look with envy at those shiny limousines with their unformed drivers and wish you could sit in one. Well, you can. New York limo service is more affordable than you think, whether it’s for Newark airport transportation, LaGuardia airport transportation, or to drive wherever you wish to go.</p>
-                    </div>
+                <div id="points"></div>
 
-                    <!-- <div id="point-social">
-                        <div>
-                            <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-                        </div>
-                        <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5"></div>
-                    </div> -->
-                </div>
             </div>
         </div>
     </div>

@@ -76,18 +76,32 @@ $(function () {
     if (pointsSlider) {
         pointsSlider.innerHTML = tmpl.render("pointsSliderTmpl", pointsModel);
         var pointsScroll = new IScroll('#points-slider', {});
+
+        $('#points-slider li').click(function () {
+            var currentPointIndex = $(this).index();
+            $('.point').hide();
+            $($('.point').eq(currentPointIndex)).show();
+        });
+    }
+
+    /* points */
+    var points = document.getElementById("points");
+    if (points) {
+        points.innerHTML = tmpl.render("pointsTmpl", pointsModel);
     }
 
     /* point carousel */
-    $('#point-carousel .carousel-indicators li').click(function () {
-        $('#point-carousel .carousel-indicators li').removeClass('selected');
+    $('.point-carousel .carousel-indicators li').click(function () {
+        var context = $(this).parents('.point-carousel ');
+        context.find('.carousel-indicators li').removeClass('selected');
         $(this).addClass('selected');
     });
 
-    $('#point-carousel').on('slide.bs.carousel', function (e) {
-        $('#point-carousel .carousel-indicators li').removeClass('selected');
+    $('.point-carousel').on('slide.bs.carousel', function (e) {
+        var context = $(e.relatedTarget).parents('.point-carousel');
+        context.find('.carousel-indicators li').removeClass('selected');
         var activeSlideIndex = $(e.relatedTarget).index();
-        $($('#point-carousel .carousel-indicators li').eq(activeSlideIndex)).addClass('selected');
+        context.find('.carousel-indicators li').eq(activeSlideIndex).addClass('selected');
     })
 
 });
