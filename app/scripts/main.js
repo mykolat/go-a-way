@@ -79,7 +79,4 @@ $(function () {
         pointsSlider.innerHTML = tmpl.render("pointsSliderTmpl", pointsModel);
     }
 
-    /* point-carousel */
-    $("#point-carousel").mCustomScrollbar({ axis: "x" });
-
 });
