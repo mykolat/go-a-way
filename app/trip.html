@@ -38,7 +38,7 @@
                 <script type="text/html" id="pointsSliderTmpl">
                     <ul>
                         <% for ( var i = 0; i < points.length; i++ ) { %>
-                        <li><a href="#"><%=points[i].name%></a></li>
+                        <li class="<%=points[i].isActive ? 'active' : '' %>"><a href="#"><%=points[i].name%></a></li>
                         <% } %>
                     </ul>
                 </script>
