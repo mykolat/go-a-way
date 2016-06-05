@@ -79,9 +79,9 @@
       var self = this,
         index = hash || (i + 1),
         title = ttl || this.o.locations[i].title,
-        visited = !!(this.o.locations[i] && this.o.locations[i].visited) ? (!!this.o.locations[i+1].visited)?"visited":"current" : "",
+        visited = !!(this.o.locations[i] && this.o.locations[i].visited) ? (!!this.o.locations[i + 1].visited) ? "visited" : "current" : "",
 
-        el_a = $('<li data-load="' + index + '" id="ullist_a_' + index + '" class = "'+ visited +'"><a  href="#' + index + '" title="' + title + '">'
+        el_a = $('<li data-load="' + index + '" id="ullist_a_' + index + '" class = "' + visited + '"><a  href="#' + index + '" title="' + title + '">'
           // <span>' + (title || ('#' + (i + 1))) + '</span>'
           + '</a></li>');
 
